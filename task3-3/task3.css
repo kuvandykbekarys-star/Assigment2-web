@@ -1,0 +1,173 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #233047;
+    background: #f4f7fb;
+}
+
+header {
+    padding: 24px;
+    color: white;
+    background: #2463c5;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin-bottom: 0;
+}
+
+.articles {
+    padding: 24px;
+    gap: 16px;
+}
+
+.article {
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 2px 10px #00000012;
+}
+
+.picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    aspect-ratio: 16 / 9;
+    font-size: clamp(30px, 6vw, 64px);
+}
+
+.blue {
+    background: #d9e9ff;
+}
+
+.orange {
+    background: #ffe7ca;
+}
+
+.green {
+    background: #d8f3e4;
+}
+
+.purple {
+    background: #eadfff;
+}
+
+.article-content {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 10px;
+    padding: 16px;
+    overflow-wrap: anywhere;
+}
+
+.article-content h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.article-content p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.article-content time {
+    margin-top: auto;
+    color: #67758a;
+    font-size: 14px;
+}
+
+
+
+.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+}
+
+.grid-view .article {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-view .article-content {
+    flex: 1;
+}
+
+
+
+.list-view {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.list-view .article {
+    display: flex;
+    align-items: stretch;
+}
+
+.list-view .picture {
+    flex: 0 0 clamp(70px, 18vw, 170px);
+    aspect-ratio: auto;
+}
+
+.list-view .article-content {
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.list-view .article-content h2 {
+    flex: 1 1 150px;
+}
+
+.list-view .article-content p {
+    flex: 2 1 220px;
+}
+
+.list-view .article-content time {
+    flex: 0 0 auto;
+    margin-top: 0;
+    margin-left: auto;
+}
+
+
+
+.magazine-view {
+    display: grid;
+    grid-auto-flow: row dense;
+    grid-template-columns: repeat(auto-fit, minmax(min(45%, 260px), 1fr));
+    gap: 16px;
+}
+
+.magazine-view .article {
+    display: flex;
+    flex-direction: column;
+}
+
+.magazine-view .article-content {
+    flex: 1;
+}
+
+.magazine-view .article:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.magazine-view .article:first-child .picture {
+    flex: 1;
+    font-size: clamp(50px, 10vw, 110px);
+}
+
+.magazine-view .article:first-child h2 {
+    font-size: clamp(22px, 3vw, 32px);
+}
